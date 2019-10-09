@@ -4,7 +4,7 @@ using Calculator.Interfaces;
 
 namespace Calculator
 {
-    class СalculateHelper : IСalculateHelper
+    public class СalculateHelper : IСalculateHelper
     {
         public double Calculate(IOperator @operator)
         {
