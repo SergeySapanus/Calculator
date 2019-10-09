@@ -43,9 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enumerators\ArithmeticOperation.cs" />
     <Compile Include="Client.cs" />
-    <Compile Include="IClient.cs" />
-    <Compile Include="IСalculateHelper.cs" />
+    <Compile Include="Interfaces\IClient.cs" />
+    <Compile Include="Interfaces\IOperator.cs" />
+    <Compile Include="Interfaces\IOperatorBuilder.cs" />
+    <Compile Include="Interfaces\IСalculateHelper.cs" />
+    <Compile Include="Operator.cs" />
+    <Compile Include="OperatorBuilder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="СalculateHelper.cs" />

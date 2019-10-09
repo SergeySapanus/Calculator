@@ -1,17 +1,20 @@
 ﻿using System;
 using System.Globalization;
 using System.Text;
+using Calculator.Interfaces;
 
 namespace Calculator
 {
     class Client : IClient
     {
         private readonly IСalculateHelper _сalculateHelper;
+        private readonly IOperatorBuilder _operatorBuilder;
         private readonly StringBuilder _expression = new StringBuilder();
 
-        public Client(IСalculateHelper сalculateHelper)
+        public Client(IСalculateHelper сalculateHelper, IOperatorBuilder operatorBuilder)
         {
             _сalculateHelper = сalculateHelper;
+            _operatorBuilder = operatorBuilder;
         }
 
         public void Clear()
@@ -22,15 +25,24 @@ namespace Calculator
 
         public void CalculateExpression()
         {
+            //1.5+5*3.4-46/3.6 
+
             try
             {
-                var random = new Random();
-                var result = _сalculateHelper.Add(random.NextDouble(), random.NextDouble());
-                WriteLine(result.ToString(CultureInfo.CurrentCulture), ConsoleColor.Green); ;
+                var expression = "1.5+5*3.4-46/3.6 ";
+                //_expression.ToString();
+
+                var @operator = _operatorBuilder.CreateOperator(expression);
+                var result = _сalculateHelper.Calculate(@operator);
+                WriteLine(result.ToString(CultureInfo.CurrentCulture), ConsoleColor.Green);
             }
             catch (Exception exception)
             {
                 WriteLine(exception.Message, ConsoleColor.Red);
+            }
+            finally
+            {
+                _expression.Clear();
             }
         }
 
