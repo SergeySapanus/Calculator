@@ -7,6 +7,6 @@ namespace Calculator.Interfaces
         double? Result { get; }
         IOperator LeftOperand { get; }
         IOperator RightOperand { get; }
-        ArithmeticOperation Operation { get; }
+        Operation Operation { get; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Calculator.Enumerators
 {
-    public enum ArithmeticOperation
+    public enum Operation
     {
         None,
         Add,

@@ -15,20 +15,20 @@ namespace Calculator
             return operation(Calculate(@operator.LeftOperand), Calculate(@operator.RightOperand));
         }
 
-        private Func<double, double, double> GetOperation(ArithmeticOperation arithmeticOperation)
+        private Func<double, double, double> GetOperation(Operation operation)
         {
-            switch (arithmeticOperation)
+            switch (operation)
             {
-                case ArithmeticOperation.Add:
+                case Operation.Add:
                     return Add;
-                case ArithmeticOperation.Subtract:
+                case Operation.Subtract:
                     return Subtract;
-                case ArithmeticOperation.Multiply:
+                case Operation.Multiply:
                     return Multiply;
-                case ArithmeticOperation.Divide:
+                case Operation.Divide:
                     return Divide;
                 default:
-                    throw new ArgumentOutOfRangeException(nameof(arithmeticOperation), arithmeticOperation, null);
+                    throw new ArgumentOutOfRangeException(nameof(operation), operation, null);
             }
         }
 

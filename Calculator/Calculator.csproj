@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enumerators\ArithmeticOperation.cs" />
+    <Compile Include="Enumerators\Operation.cs" />
     <Compile Include="Calculator.cs" />
     <Compile Include="Interfaces\ICalculator.cs" />
     <Compile Include="Interfaces\IOperator.cs" />

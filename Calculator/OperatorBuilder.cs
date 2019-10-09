@@ -38,13 +38,13 @@ namespace Calculator
                     case '+':
                         {
                             var rightOperand = GetPriorityOperand();
-                            leftOperand = new Operator(leftOperand, rightOperand, ArithmeticOperation.Add);
+                            leftOperand = new Operator(leftOperand, rightOperand, Operation.Add);
                         }
                         break;
                     case '-':
                         {
                             var rightOperand = GetPriorityOperand();
-                            leftOperand = new Operator(leftOperand, rightOperand, ArithmeticOperation.Subtract);
+                            leftOperand = new Operator(leftOperand, rightOperand, Operation.Subtract);
                         }
                         break;
                     default:
@@ -70,12 +70,12 @@ namespace Calculator
                 case '*':
                     {
                         var rightOperand = new Operator(GetNumber());
-                        return new Operator(leftOperand, rightOperand, ArithmeticOperation.Multiply);
+                        return new Operator(leftOperand, rightOperand, Operation.Multiply);
                     }
                 case '/':
                     {
                         var rightOperand = new Operator(GetNumber());
-                        return new Operator(leftOperand, rightOperand, ArithmeticOperation.Divide);
+                        return new Operator(leftOperand, rightOperand, Operation.Divide);
                     }
             }
 
