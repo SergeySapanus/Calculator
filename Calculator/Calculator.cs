@@ -5,13 +5,13 @@ using Calculator.Interfaces;
 
 namespace Calculator
 {
-    class Client : IClient
+    class Calculator : ICalculator
     {
         private readonly IСalculateHelper _сalculateHelper;
         private readonly IOperatorBuilder _operatorBuilder;
         private readonly StringBuilder _expression = new StringBuilder();
 
-        public Client(IСalculateHelper сalculateHelper, IOperatorBuilder operatorBuilder)
+        public Calculator(IСalculateHelper сalculateHelper, IOperatorBuilder operatorBuilder)
         {
             _сalculateHelper = сalculateHelper;
             _operatorBuilder = operatorBuilder;
@@ -25,12 +25,9 @@ namespace Calculator
 
         public void CalculateExpression()
         {
-            //1.5+5*3.4-46/3.6 
-
             try
             {
-                var expression = "1.5+5*3.4-46/3.6 ";
-                //_expression.ToString();
+                var expression = _expression.ToString();
 
                 var @operator = _operatorBuilder.CreateOperator(expression);
                 var result = _сalculateHelper.Calculate(@operator);

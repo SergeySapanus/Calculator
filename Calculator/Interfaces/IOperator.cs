@@ -5,8 +5,8 @@ namespace Calculator.Interfaces
     public interface IOperator
     {
         double? Result { get; }
-        Operator LeftOperand { get; }
-        Operator RightOperand { get; }
+        IOperator LeftOperand { get; }
+        IOperator RightOperand { get; }
         ArithmeticOperation Operation { get; }
     }
 }

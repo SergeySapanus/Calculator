@@ -10,7 +10,7 @@ namespace Calculator
             Result = result;
         }
 
-        public Operator(Operator leftOperand, Operator rightOperand, ArithmeticOperation operation)
+        public Operator(IOperator leftOperand, IOperator rightOperand, ArithmeticOperation operation)
         {
             LeftOperand = leftOperand;
             RightOperand = rightOperand;
@@ -19,9 +19,9 @@ namespace Calculator
 
         public double? Result { get; private set; }
 
-        public Operator LeftOperand { get; private set; }
+        public IOperator LeftOperand { get; private set; }
 
-        public Operator RightOperand { get; private set; }
+        public IOperator RightOperand { get; private set; }
 
         public ArithmeticOperation Operation { get; private set; }
     }

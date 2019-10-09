@@ -44,8 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enumerators\ArithmeticOperation.cs" />
-    <Compile Include="Client.cs" />
-    <Compile Include="Interfaces\IClient.cs" />
+    <Compile Include="Calculator.cs" />
+    <Compile Include="Interfaces\ICalculator.cs" />
     <Compile Include="Interfaces\IOperator.cs" />
     <Compile Include="Interfaces\IOperatorBuilder.cs" />
     <Compile Include="Interfaces\IСalculateHelper.cs" />

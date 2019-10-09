@@ -1,6 +1,6 @@
 ﻿namespace Calculator.Interfaces
 {
-    interface IClient
+    interface ICalculator
     {
         void Clear();
         void CalculateExpression();

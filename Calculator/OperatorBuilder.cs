@@ -18,7 +18,7 @@ namespace Calculator
 
         #endregion Fields
 
-        public Operator CreateOperator(string expression)
+        public IOperator CreateOperator(string expression)
         {
             _expression = expression.ToCharArray();
             _expressionLength = _expression.Length;
@@ -27,7 +27,7 @@ namespace Calculator
             return GetRegularOperand();
         }
 
-        private Operator GetRegularOperand()
+        private IOperator GetRegularOperand()
         {
             var leftOperand = GetPriorityOperand();
 
@@ -61,7 +61,7 @@ namespace Calculator
             return leftOperand;
         }
 
-        private Operator GetPriorityOperand()
+        private IOperator GetPriorityOperand()
         {
             var leftOperand = new Operator(GetNumber());
 

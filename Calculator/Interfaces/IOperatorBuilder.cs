@@ -2,6 +2,6 @@
 {
     public interface IOperatorBuilder
     {
-        Operator CreateOperator(string expression);
+        IOperator CreateOperator(string expression);
     }
 }

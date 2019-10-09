@@ -11,7 +11,7 @@ namespace Calculator
 {
     class Program
     {
-        private static readonly IClient _client = new Client(new СalculateHelper(), new OperatorBuilder());
+        private static readonly ICalculator Calculator = new Calculator(new СalculateHelper(), new OperatorBuilder());
 
         static void Main(string[] args)
         {
@@ -25,13 +25,13 @@ namespace Calculator
                 {
                     case 'c':
                     case 'C':
-                        _client.Clear();
+                        Calculator.Clear();
                         break;
                     case '=':
-                        _client.CalculateExpression();
+                        Calculator.CalculateExpression();
                         break;
                     default:
-                        _client.UpdateExpression(key.KeyChar);
+                        Calculator.UpdateExpression(key.KeyChar);
                         break;
                 }
             }
